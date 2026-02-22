@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Bank App</h1>
+
+    <input id="amount" type="number">
+    <button onclick="credit()">Credit</button>
+    <button onclick="debit()">Debit</button>
+
+    <p id="balance">Balance: 1000</p>
+
+    <script>
+        let balance = 1000;
+
+        function credit() {
+            balance += Number(document.getElementById("amount").value);
+            document.getElementById("balance").innerText = "Balance: " + balance;
+        }
+
+        function debit() {
+            balance -= Number(document.getElementById("amount").value);
+            document.getElementById("balance").innerText = "Balance: " + balance;
+        }
+    </script>
+
+</body>
+
+</html>
