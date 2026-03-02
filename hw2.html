@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+</body>
+</html><body>
+    <h1>Bank App</h1>
+
+    <input id="amount" type="number">
+    <button onclick="credit()">Credit</button>
+    <button onclick="debit()">Debit</button>
+
+    <p id="balance">Balance: 1000</p>
+    <p id="message"></p>
+
+    <script>
+        let balance = 1000;
+
+        function credit() {
+            let amount = document.getElementById("amount").value;
+
+            if (amount === "") {
+                document.getElementById("message").innerText = "Please enter amount";
+                return;
+            }
+
+            amount = Number(amount);
+
+            if (amount <= 0) {
+                document.getElementById("message").innerText = "Transaction amount must be more than 0";
+                return;
+            }
+
+            balance += amount;
+            document.getElementById("balance").innerText = "Balance: " + balance;
+            document.getElementById("message").innerText = "";
+        }
+
+        function debit() {
+            let amount = document.getElementById("amount").value;
+
+            if (amount === "") {
+                document.getElementById("message").innerText = "Please enter amount";
+                return;
+            }
+
+            amount = Number(amount);
+
+            if (amount <= 0) {
+                document.getElementById("message").innerText = "Transaction amount must be more than 0";
+                return;
+            }
+
+            balance -= amount;
+            document.getElementById("balance").innerText = "Balance: " + balance;
+            document.getElementById("message").innerText = "";
+        }
+    </script>
+
+</body>
+
+</html>
